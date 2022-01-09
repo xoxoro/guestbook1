@@ -155,7 +155,7 @@ public class GuestbookDao {
 ////////////////////////////////////////////
 //insert --> 특정 no 출력
 ////////////////////////////////////////////
-	public GuestbookVo insert(GuestbookVo guestVo) {
+	public GuestbookVo insert(GuestbookVo guestbookVo) {
 		
 		GuestbookVo guestbookvo = new GuestbookVo();
 		// 0. import java.sql.*;
@@ -181,9 +181,9 @@ public class GuestbookDao {
 			pstmt = conn.prepareStatement(query); // 쿼리로 만들기
 
 			// 바인딩(물음표넣어주기)
-			pstmt.setString(1, guestVo.getName()); // ?(물음표) 중 1번째, 순서중요
-			pstmt.setString(2, guestVo.getPassword()); // ?(물음표) 중 2번째, 순서중요
-			pstmt.setString(3, guestVo.getContent()); // ?(물음표) 중 3번째, 순서중요
+			pstmt.setString(1, guestbookVo.getName()); // ?(물음표) 중 1번째, 순서중요
+			pstmt.setString(2, guestbookVo.getPassword()); // ?(물음표) 중 2번째, 순서중요
+			pstmt.setString(3, guestbookVo.getContent()); // ?(물음표) 중 3번째, 순서중요
 			
 			int count = pstmt.executeUpdate(); //실행만 쿼리,나머지는 업데이트
 				
