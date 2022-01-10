@@ -62,8 +62,8 @@
 				<td><a href="./deleteForm.jsp?id=<%=guestbookList.get(i).getNo()%>">삭제</a></td>
 			</tr>
 			<tr>
-				<td colspan="4"><br>
-					<%=guestbookList.get(i).getContent()%>
+				<td colspan="4">
+					<%=guestbookList.get(i).getContent()%><br>
 				</td>
 			</tr>
 		</table>

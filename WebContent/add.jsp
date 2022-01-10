@@ -13,10 +13,10 @@
 	String content = request.getParameter("textarea");
 	
 	//guestbookVo에 넣어줘야함
-	GuestbookVo guestbookVo = new GuestbookVo(name,password,content);
+	GuestbookVo vo = new GuestbookVo(name,password,content);
 
 	//저장
-	guestbookDao.insert(guestbookVo);
+	guestbookDao.insert(vo);
 		
 	//리다이렉션
 	response.sendRedirect("./addList.jsp");

@@ -157,7 +157,7 @@ public class GuestbookDao {
 ////////////////////////////////////////////
 	public GuestbookVo insert(GuestbookVo guestbookVo) {
 		
-		GuestbookVo guestbookvo = new GuestbookVo();
+		GuestbookVo vo = new GuestbookVo();
 		// 0. import java.sql.*;
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -181,9 +181,9 @@ public class GuestbookDao {
 			pstmt = conn.prepareStatement(query); // 쿼리로 만들기
 
 			// 바인딩(물음표넣어주기)
-			pstmt.setString(1, guestbookVo.getName()); // ?(물음표) 중 1번째, 순서중요
-			pstmt.setString(2, guestbookVo.getPassword()); // ?(물음표) 중 2번째, 순서중요
-			pstmt.setString(3, guestbookVo.getContent()); // ?(물음표) 중 3번째, 순서중요
+			pstmt.setString(1, vo.getName()); // ?(물음표) 중 1번째, 순서중요
+			pstmt.setString(2, vo.getPassword()); // ?(물음표) 중 2번째, 순서중요
+			pstmt.setString(3, vo.getContent()); // ?(물음표) 중 3번째, 순서중요
 			
 			int count = pstmt.executeUpdate(); //실행만 쿼리,나머지는 업데이트
 				
@@ -219,7 +219,7 @@ public class GuestbookDao {
 			}
 
 		
-			return guestbookvo;
+			return vo;
 			
 	}
 	
@@ -254,11 +254,11 @@ public class GuestbookDao {
 			// 4.결과처리
 			while(rs.next()) {
 				
-				int no = rs.getInt("no");
 				String name = rs.getString("name");
 				String password = rs.getString("password");
 				String content = rs.getString("content");
 				String reg_date = rs.getString("reg_date");
+				int no = rs.getInt("no");
 			}
 
 		} catch (SQLException e) {
