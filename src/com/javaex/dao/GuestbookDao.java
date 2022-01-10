@@ -175,7 +175,7 @@ public class GuestbookDao {
 			// 3. SQL문 준비 / 바인딩 / 실행
 			String query = ""; // 쿼리문 문자열만들기, ? 주의
 			query += " INSERT INTO guestbook ";
-			query += " VALUES (seq_person_id.nextval, ?, ?, ?, SYSDATE) ";
+			query += " VALUES (seq_guestbook_no.nextval, ?, ?, ?, SYSDATE) ";
 			// System.out.println(query);
 
 			pstmt = conn.prepareStatement(query); // 쿼리로 만들기
